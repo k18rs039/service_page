@@ -1,0 +1,405 @@
+@charset "UTF-8";
+/* ----------------------------------
+                reset
+----------------------------------- */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+  *::before,
+  *::after { 
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+  }  
+  body,h1,h2,h3,h4,h5{
+    margin: 0px;
+    padding: 0px;
+    font-weight: normal;
+  }
+  body {
+    color: #000000;
+    background-color: #ffffff;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    line-height: 1.3;
+    font-size: 16px;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto; 
+  }
+  table {
+    border-collapse: collapse;
+  }
+  a{
+    cursor: pointer;
+  }
+
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  input[type=esubmit],
+  button,
+  select,
+  textarea {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: none;
+  }
+
+/* ----------------------------------
+          基本レイアウト
+----------------------------------- */
+.main_width {
+  max-width: 1200px;/*最大幅1200px*/
+  margin-left: auto;/*左揃え自動*/
+  margin-right: auto;/*右揃え自動*/
+}
+.narrow_width {
+  max-width: 1000px;/*最大幅1200px*/
+  margin-left: auto;/*左揃え自動*/
+  margin-right: auto;/*右揃え自動*/
+}
+.home_section {
+  padding-top: 140px;/*上部の余白140px*/
+  padding-bottom: 140px;/*下部の余白140px*/
+}
+.home_section.bg_gray {
+  background: #f5f4f1;
+}
+.home_section.bg_white {
+  background: #fff;
+}
+
+
+
+#wrapper {
+  overflow: hidden;
+}
+
+
+/* ----------------------------------
+            共通パーツ
+----------------------------------- */
+.section_title h2{
+  font-size: 40px;
+  text-align: center;/*テキストの中央揃え*/
+  font-weight: bold;/*太字*/
+  letter-spacing: 0.05em;/*文字と文字の間隔*/
+}
+
+
+/* ----------------------------------
+               header
+----------------------------------- */
+header{
+  height: 76px;
+  width: 100%;
+  position: relative;
+}
+header #hd_logo{
+  padding: 10px 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* ----------------------------------
+        ハンバーガーメニュー
+----------------------------------- */
+header #hd_menu_btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+}
+header #hd_menu_btn_img{
+  width: auto;
+  height: 100%;
+}
+/* ----------------------------------
+           first_view
+----------------------------------- */
+#first_view img{
+  width: 100%;
+}
+
+/* ----------------------------------
+      こんなお悩みはありませんか?
+----------------------------------- */
+.intro_flex {
+  display: flex;
+  padding-top: 74px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.intro_box {
+  width: 33.3333%;
+}
+.intro_box:nth-child(2){
+  transform: translateY(50px)
+}
+.intro_box .fukidashi {
+  background: #fff;
+  height: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  position: relative;
+}
+.intro_box .fukidashi p{
+  padding: 40px;
+  font-size: 22px;
+  line-height: 1.8em;
+  letter-spacing: 0.03em;
+}
+/* ----------------------------------
+         もやもやの疑似要素
+----------------------------------- */
+.intro_box .fukidashi::before{
+  position: absolute;
+  content: "";
+  display: block;
+  background-image: url("../img/moyamoya.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 68px;
+  height: 78px;
+  top: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.intro_box .fukidashi::after {
+  position: absolute;
+  content: "";
+  display: block;
+  background-image: url("../img/fukidashi.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 34px;
+  height: 26px;
+  bottom: -24px;
+  right: 32px;
+}
+/* ----------------------------------
+            intro_catch
+----------------------------------- */
+.intro_catch {
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+}
+.intro_catch p {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+.intro_catch p span.red {
+  color: #c9191a;
+}
+.intro_catch p::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 10px;
+  background-image: url("../img/underline.png");
+  left: 0;
+  bottom: -10px;
+}
+.intro_catch p ::after {
+  position: absolute;
+  display: block;
+  content: "";
+  background-image: url("../img/toki.png");
+  width: 168px;
+  height: 148px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 0%;
+  top: 50%;
+  transform: translate(110%,-50%);
+}
+/* ----------------------------------
+              service
+----------------------------------- */
+.service_flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 70px;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.service_flex .service_box {
+  width: 33.3333%;
+  padding: 0 15px;
+  position: relative;
+}
+.service_flex .service_box .service_box_inner {
+  border: 3px solid #c9191a;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;/*均等に配置*/
+  padding: 0 10px;
+}
+.service_flex .service_box .service_box_inner  p {
+  font-weight: bold;
+  text-align: center;
+}
+.service_title {
+  color: #c9191a;
+  font-size: 30px;
+  padding-top: 50px;
+}
+.service_price {
+  font-size: 22px;
+  margin: 26px;
+}
+.service_price >span {
+  font-size: 16px;
+  display: block;
+  margin-top: 0.5em;
+}
+.service_image {
+  text-align: center;
+}
+/* ----------------------------------
+              point
+----------------------------------- */
+.point_wrap {
+  margin-top: 70px;
+  margin-bottom: 120px;
+}
+.point_block {
+  background-color: white;
+  display: flex;
+  align-items: center;/*  指定した対象を中央揃え*/
+  padding: 0 64px;/*上下(0) 左右(64px)の余白*/
+}
+.point_block + .point_block {
+  margin-top: 20px;
+}
+.point_text {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+.point_text h3 {
+  font-size: 30px;
+  color: #c9191a;
+  font-weight: bold;/*太字*/
+}
+.point_text p {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  line-height: 2;
+  margin-top: 1em;
+}
+.point_number {
+  min-width: 70px;
+  margin-right: 48px;
+}
+/* ----------------------------------
+          advertisement_list
+----------------------------------- */
+.advertisement_list {
+  margin-top: 70px;
+}
+.advertisement_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.advertisement_list li {
+  width: 25%;
+  height: 90px;
+  position: relative;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.advertisement_item {
+  color: #c9191a;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 8px;
+}
+.advertisement_image {
+  margin-top: 40px;
+  text-align: center;
+}
+/* ----------------------------------
+            service_detail
+----------------------------------- */
+.service_detail {
+  margin-top: 70px;
+}
+.service_name {
+  background-color: #f5f4f1;
+  width: 100%;
+  text-align: center;
+}
+.service_name h3 {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 1em 0.5em;
+}
+.table_area {
+  margin-bottom: 60px;
+}
+.table_area table {
+  border-top: 1px  solid #e7e7e7;
+  width: 100%;
+}
+.table_area table th {
+  text-align: center;
+  font-weight: bold;
+  background-color: #fcfcfd;
+}
+.table_area table th,.table_area table td {
+  padding: 1em;
+  font-size: 16px;
+  letter-spacing: 0.01em;
+  line-height: 2;
+  border-bottom: 1px  solid #e7e7e7;
+  vertical-align: middle;
+}
+.table_area table th + th,.table_area table td + td {/*thとthが連続したときとtdとtdが連続したときのみ*/
+  border-left: 1px solid #e7e7e7;
+}
+.table_area table td:first-child {
+  font-weight: bold;
+  width: 10em;
+}
+.table_area table td:nth-child(n + 3) {/*3つ目以降の複製を行う*/
+  text-align: center;
+  width: 10em;
+}
+.price_wide {
+  width: 20em;
+}
